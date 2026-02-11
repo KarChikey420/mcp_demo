@@ -1,6 +1,9 @@
+import os
+
 from mcp.server.fastmcp import FastMCP
 
-mcp = FastMCP("math-server")
+port = int(os.getenv("PORT", "8000"))
+mcp = FastMCP("math-server", port=port)
 
 @mcp.tool()
 def add(a: float, b: float) -> float:
@@ -13,4 +16,4 @@ def multiply(a: float, b: float) -> float:
     return a * b
 
 if __name__ == "__main__":
-    mcp.run(transport="stdio")
+    mcp.run(transport="streamable-http")

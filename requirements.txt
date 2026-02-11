@@ -1,3 +1,7 @@
 langchain-groq
+langchain
 langchain-mcp-adapters
+langgraph
 mcp
+dotenv
+uvicorn

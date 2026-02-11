@@ -1,6 +1,9 @@
+import os
+
 from mcp.server.fastmcp import FastMCP
 
-mcp = FastMCP("math-server")
+port = int(os.getenv("PORT", "8000"))
+mcp = FastMCP("weather-server", port=port)
 
 @mcp.tool()
 def weather(city: str) -> str:
